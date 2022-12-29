@@ -11,8 +11,14 @@ public class C01_PassByValue {
         //   elementler ekleyip yazdirsin
         // her iki method'u cagirdiktan sonra main method'daki list'i yazdiralim
         List<Integer> sayilar=new ArrayList<>();
-        sayilar.add(20);
-
+        sayilar.add(10);
+        sayilar.add(34);
+        sayilar.add(45);
+        System.out.println(sayilar); // [10, 34, 45]
+        elemanlariDegistir(sayilar);
+        System.out.println("Birinci method call'dan sonra sayilar : "+sayilar); //[25, 54, 67]
+        yeniListAta(sayilar);
+        System.out.println("İkinci method call'dan sonra sayilar : "+sayilar); //[25, 54, 67]
 
         /*
             Java PassByValue kullanir
@@ -25,7 +31,24 @@ public class C01_PassByValue {
             Eger method'da elementlere atama yapilirsa, main method'daki elementler de degismis olur
             Eger list veya array'e yeni bir list veya array degeri atanirsa bu atama method'da kalir,
             main method'daki list veya array degismez.
-            Araba ayni kaldigi muddetce icindekilerin degismesi passByValue'e aykiri degildir.
+            Araba ayni kaldigi muddetce icindekilerin degismesi PassByValue'e aykiri degildir.
          */
+    }
+    public static void elemanlariDegistir(List<Integer> sayilar){
+        sayilar.set(0,25);
+        sayilar.set(1,54);
+        sayilar.set(2,67);
+        System.out.println("elemanlari degistir methodunda list :"+sayilar);
+        //elemanlari degistir methodunda list :[25, 54, 67]
+
+
+    }
+    public static void yeniListAta(List<Integer> sayilar){
+        sayilar=new ArrayList<>();
+        sayilar.add(34);
+        sayilar.add(98);
+        sayilar.add(11);
+        System.out.println("Yeni list ata methodunda sayilar list'inin son hali : "+sayilar);//[34, 98, 11]
+
     }
 }

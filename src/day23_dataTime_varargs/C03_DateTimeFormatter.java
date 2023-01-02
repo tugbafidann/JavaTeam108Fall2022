@@ -37,18 +37,18 @@ public class C03_DateTimeFormatter {
 
          */
         LocalDateTime ldt=LocalDateTime.now();
-        System.out.println(ldt);  // 2022-12-20T12:37:35.590053700
+        System.out.println(ldt);  // 2023-01-03T01:39:05.649942600
 
-        // Sadece tarihi 20/12/2022 olarak yazdiralim
+        // Sadece tarihi 03/01/2023 olarak yazdiralim
         DateTimeFormatter format1=DateTimeFormatter.ofPattern("dd/MM/YYYY");
-        System.out.println(ldt.format(format1));  // 20/12/2022
+        System.out.println(ldt.format(format1));  // 03/01/2023
 
-        // Sadece tarihi 12.20.22 Tue seklinde yazdirin
+        // Sadece tarihi 01.03.23 Tue seklinde yazdirin
         DateTimeFormatter format2=DateTimeFormatter.ofPattern("MM.dd.yy EEE");
-        System.out.println(ldt.format(format2)); // 12.20.22 Sal
+        System.out.println(ldt.format(format2)); // 01.03.23 Sal
 
-        // Sadece zamani 10:49 am olarak yazdırın
+        // Sadece zamani 01:39  am olarak yazdırın
         DateTimeFormatter format3=DateTimeFormatter.ofPattern("hh:mm a");
-        System.out.println(ldt.format(format3));   // 12:51 ÖS
+        System.out.println(ldt.format(format3));   // 01:39 ÖÖ
     }
 }
